@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <title>
+        Proviz School of AI
+    </title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+
+<body>
+    <div class="container-fluid px-0" style="width: 100%;">
+        <div class="container-fluid bg-dark py-1">
+            <div class="row">
+                <div class="col-lg-3 col-xs-12">
+                    <span style="color: #fff; font-size: 24px; line-height: 42px;">Proviz School of AI</span>
+                </div>
+                <div class="col-lg-5 col-xs-12 px-0">
+                    <ul class="d-flex p-0 nav-bar" style="color: #fff; list-style-type: none; margin: 0; height: 40px;">
+                        <li class="px-3 my-auto"><a href="#" style="color: #636AE8;">Home</a></li>
+                        <li class="px-3 my-auto"><a href="#">About Us</a></li>
+                        <li class="px-3 my-auto"><a href="#">Courses</a></li>
+                        <li class="px-3 my-auto"><a href="#">FAQ</a></li>
+                        <li class="px-3 my-auto"><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 d-flex justify-content-end apply-btn-container">
+                    <a class="apply-btn applyNowBtn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="popupForm" class="popup">
+            <div class="popup-content">
+                <div class="row" style="text-align: right;">
+                    <span class="close-btn">X</span>
+                </div>
+                <div class="row mb-3" style="text-align: center;">
+                    <h2>Register</h2>
+                </div>
+                <form id="applicationForm" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" id="name" name="fullname" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="row">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="row">
+                        <input type="email" id="email" name="email" placeholder="john@gmail.com" required>
+                    </div>
+                    <div class="row">
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div class="row">
+                        <input type="tel" id="phone" name="phone" placeholder="9182884746" pattern="^[0-9]{10}$" title="Phone number must be 10 digits" required/>
+                    </div>
+                    <div class="row">
+                        <label for="message">Why do you want to join this course
+                            <span style="color: #656565;">(Optional)
+                            </span>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <textarea id="message" name="description"></textarea>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Register" class="register-btn" style="border: none;">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0 bg-img">
+            <!-- <div class="bg-img"> -->
+            <div class="row" style="padding-top: 150px;">
+                <h2 class="text-light m-auto title"
+                    style="line-height: 84px; font-size: 64px; width: auto; font-weight: 700;">Get Python
+                    Course Now</h2>
+            </div>
+            <div class="row">
+                <p class="text-light mx-auto w-auto">Learn from the best with our AI-driven courses</p>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="apply-btn-hero-container">
+                    <a class="applyNowBtn apply-btn-hero">Apply Now</a>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+        <div class="container-fluid p-0 bg-dark text-light">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="row text-align-center">
+                        <h3 class="mx-auto mb-4 w-auto">Course Offerings</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="courses-container">
+                            <div class="row p-3">
+                                <img src="/static/images/ai-generated-8540920_1280.webp" alt="Artificial Intelligence Image" class="courses-img">
+                                <h6>Artificial Intelligence</h6>
+                                <p>Gain skills in leadership, strategy, and data-driven decision-making with our
+                                    comprehensive business courses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="courses-container">
+                            <div class="row p-3">
+                                <img src="/static/images/machine-learning-4129173_1280.jpg" alt="Machine Learning Image" class="courses-img courses-img-2">
+                                <h6>Machine Learning</h6>
+                                <p>Gain skills in leadership, strategy, and data-driven decision-making with our
+                                    comprehensive business courses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="courses-container">
+                            <div class="row p-3">
+                                <img src="/static/images/ai-generated-8540915_1280.webp" alt="Deep Learning Image" class="courses-img">
+                                <h6>Deep Learning</h6>
+                                <p>Gain skills in leadership, strategy, and data-driven decision-making with our
+                                    comprehensive business courses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-light" style="background-color: #1D2128;">
+            <div class="container py-5">
+                <div class="row">
+                    <h2 class="w-auto m-auto" style="color: #636AE8;">Take A Quick Course</h2>
+                </div>
+                <div class="row pt-2">
+                    <p class="m-auto w-autor" style="text-align: center;">Boost your AI skills with our concise and impactful courses.
+                        Start
+                        learning today and transform your future.</p>
+                </div>
+                <div class="row d-flex justify-content-center mt-4">
+                    <div class="apply-btn-hero-container">
+                        <a class="apply-btn-hero applyNowBtn">Get Started Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-light" style="background-color: #171A1F;">
+            <div class="container pt-5">
+                <div class="row pb-4">
+                    <span class="w-auto m-auto" style="font-size: 32px;">Proviz School of AI</span>
+                </div>
+                <div class="row pb-3">
+                    <h4 class="m-auto w-auto" style="font-size: 20px;">Subscribe to our newsletter</h4>
+                </div>
+                <div class="row">
+                    <div class="m-auto w-auto">
+                        <form>
+                            <input type="email" placeholder="Email" name="email" class="subscribe-input" required>
+                            <input type="submit" value="Subscribe" class="subscribe-btn">
+                        </form>
+                    </div>
+                </div>
+                <div class="row pb-3 pt-5">
+                    <span class="m-auto w-auto" class="copyright">© 2024 Proviz School of AI. All rights
+                        reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var popup = document.getElementById("popupForm");
+        var buttons = document.querySelectorAll(".applyNowBtn");
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        buttons.forEach(function(button) {
+            button.onclick = function () {
+                popup.style.display = "block";
+            }
+        });
+
+        span.onclick = function () {
+            popup.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == popup)
+                popup.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>

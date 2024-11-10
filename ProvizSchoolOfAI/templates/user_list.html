@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            position: relative; 
+        }
+
+        h1 {
+            color: #5a2a82;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        table {
+            width: 80%;
+            margin-top: 30px;
+            border-collapse: collapse;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        table thead {
+            background-color: #5a2a82;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        table tbody tr:hover {
+            background-color: #e2e2e2;
+            cursor: pointer;
+        }
+
+        .logout-btn {
+            position: absolute; 
+            top: 20px;
+            right: 20px;
+            background-color: #ff5c5c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background-color: #e04b4b;
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+    <h1>User Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.full_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
